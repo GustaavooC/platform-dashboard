@@ -1,66 +1,169 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Plataforma de Análise de Dados com Dashboard Interativo
 
-## About Laravel
+## Descrição
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este projeto é uma plataforma web para visualização, análise e geração de relatórios interativos baseados em grandes volumes de dados. Utilizando **Python** para processamento de dados e **Laravel (PHP)** para a criação de um dashboard interativo e gerenciador de usuários, a plataforma permite que os usuários filtrem dados, visualizem gráficos dinâmicos, e exportem relatórios em PDF e Excel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Dashboard Interativo**: Visualize gráficos e tabelas interativos baseados em dados processados.
+- **Filtros Avançados**: Aplique filtros por data e outros critérios para personalizar a exibição dos dados.
+- **Exportação de Relatórios**: Exporte relatórios filtrados em **PDF** e **Excel**.
+- **Processamento de Dados**: Use scripts Python para processar grandes volumes de dados e aplicar modelos de machine learning.
+- **Autenticação e Permissões**: Autenticação de usuários e controle de permissões via Laravel.
+- **Gráficos Dinâmicos**: Gráficos interativos gerados com **Chart.js**.
+  
+## Tecnologias Utilizadas
 
-## Learning Laravel
+### Backend
+- **PHP** com **Laravel** (v8.x ou superior)
+- **Python** (v3.x) para processamento de dados e machine learning
+- **MySQL** ou **PostgreSQL** para gerenciamento do banco de dados
+- **Composer** para gerenciamento de dependências PHP
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Frontend
+- **Blade Templates** com Laravel
+- **Chart.js** para gráficos dinâmicos
+- **Bootstrap** para estilização
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Bibliotecas Python
+- **pandas** para análise de dados
+- **numpy** para cálculos numéricos
+- **scikit-learn** para machine learning
+- **matplotlib** para geração de gráficos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Outras Ferramentas
+- **DOMPDF** para geração de PDFs em Laravel
+- **Laravel-Excel** para exportação de relatórios em Excel
 
-## Laravel Sponsors
+## Instalação
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clonar o repositório
 
-### Premium Partners
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 2. Instalar dependências PHP
 
-## Contributing
+Execute o comando abaixo para instalar as dependências do Laravel:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+### 3. Configurar o arquivo `.env`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Copie o arquivo de configuração de exemplo e configure o ambiente:
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+No arquivo `.env`, configure as credenciais do banco de dados:
 
-## License
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco
+DB_USERNAME=usuario
+DB_PASSWORD=senha
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Gerar a chave da aplicação
+
+```bash
+php artisan key:generate
+```
+
+### 5. Executar as migrações do banco de dados
+
+```bash
+php artisan migrate
+```
+
+### 6. Instalar dependências Python
+
+No diretório `python/`, instale as dependências necessárias:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 7. Servir a aplicação
+
+Para iniciar o servidor Laravel:
+
+```bash
+php artisan serve
+```
+
+Para rodar os scripts Python para processamento de dados:
+
+```bash
+python scripts/data_processing.py
+```
+
+## Uso
+
+1. Acesse o dashboard no navegador, geralmente em `http://localhost:8000`.
+2. Faça login com suas credenciais (admin).
+3. Use os filtros de data para personalizar a visualização dos dados.
+4. Exporte relatórios em PDF ou Excel com base nos filtros aplicados.
+
+## Estrutura de Diretórios
+
+```bash
+├── app/                    # Código fonte da aplicação Laravel
+│   ├── Http/
+│   ├── Models/
+│   ├── ...
+├── public/                 # Arquivos públicos (CSS, JS, Imagens)
+├── resources/              # Views e assets
+│   ├── views/
+│   ├── js/
+│   ├── css/
+├── routes/                 # Definições de rotas
+├── storage/                # Arquivos de cache e logs
+├── python/                 # Scripts Python para processamento de dados
+│   ├── scripts/
+│   └── requirements.txt    # Dependências Python
+└── tests/                  # Testes automatizados
+```
+
+## Funcionalidades Implementadas
+
+### Filtros Interativos
+
+Os usuários podem aplicar filtros de data para personalizar a exibição dos dados no dashboard. O sistema também permite a exportação de relatórios filtrados:
+
+- **Filtro por intervalo de datas**: Permite a visualização de vendas e receitas entre datas específicas.
+- **Filtros adicionais** (categoria, usuário, etc.): Personalize os relatórios conforme a necessidade.
+
+### Exportação de Relatórios
+
+- **Exportação para PDF**: Relatórios dinâmicos podem ser exportados para PDF, com base nos filtros aplicados.
+- **Exportação para Excel**: Dados filtrados também podem ser exportados para Excel para uma análise mais aprofundada.
+
+## Contribuições
+
+1. Faça um fork do projeto.
+2. Crie uma nova branch com suas modificações:
+   ```bash
+   git checkout -b minha-nova-funcionalidade
+   ```
+3. Envie suas alterações:
+   ```bash
+   git add .
+   git commit -m "Minha nova funcionalidade"
+   git push origin minha-nova-funcionalidade
+   ```
+4. Abra um **Pull Request**.
+
+## Licença
+
+Este projeto é licenciado sob a [MIT License](LICENSE).
+
