@@ -42,8 +42,8 @@ Este projeto é uma plataforma web para visualização, análise e geração de 
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/GustaavooC/platform-dashboard.git
+cd platform-dashboard
 ```
 
 ### 2. Instalar dependências PHP
